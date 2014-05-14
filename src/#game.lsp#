@@ -50,7 +50,7 @@
 				  
 (defun describe-objects (location object-locations)
                         (apply #'append (mapcar #'describe-object (cdr (assoc location object-locations)))))
-						
+
 
 
 ;;; Actions
