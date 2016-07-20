@@ -9,8 +9,9 @@ The text adventure game from "Land of Lisp" by Conrad Barski, with a few persona
 
 # Modifications
 Many modifications were made based on my learning over time. Two definite sources that primarily influenced these changes were: 
-* The Systematic Program Design MOOC by Prof. Gregor Kiczales at UBC
-* The Introduction to Game Design MOOC by MITx
+* The Systematic Program Design (MOOC on edX) by Prof. Gregor Kiczales at UBC
+* The Introduction to Game Design (MOOC on edX) by Prof. Philip Tan and Prof. Sarah Verilli at MIT
+* Structure and Interpration of Computer Programs (book) by Gerald Sussman and Hal Abelson
 
 ## Code
 
