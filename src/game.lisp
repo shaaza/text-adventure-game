@@ -1,56 +1,53 @@
-;;; Places and Objects
-;; Nodes (or Places and Scenery)
-; Variable: Store location and desc as alists.(nodes)
+(load "game-data.lisp")
 
-(defparameter *nodes* 
-                      '((garden (There is a beautiful garden))
-                       (living-room (There is an old man sleeping on the couch))
-                       (attic (There is a lot of dust and mangoes))))					   
-                       					   
+;;;; Pure Functions
 
-										   
-; Function: convert alist to description
+;;;; Scene describers.
+
+
+;;; Operations on Nodes
+
+;; ['key, 'nodes a-list] -> ['(value)]
+;; Given the key (location) of an a-list item and the a-list, returns the value (description of location).
 
 (defun describe-location (location nodes) 
-(cadr (assoc location nodes)))
+       (cadr (assoc location nodes)))
 					 
-;; Edges (or Paths)
-; Variable: Store location and path (to-location direction path-portal) as alists.
+;;; Operations on Edges
 
-(defparameter *edges* '((garden (living-room west door))
-                      (living-room (attic north ladder) (garden east door) )
-					  (attic (living-room south ladder))))
-					  					  
-; Function: Convert path data to textual description
 
-(defun describe-path (edge)
-`(There is a ,(cadr edge) going ,(caddr edge) from here.) )
-
-; Function: Given location, output multiple path description for the locn.
+;; ['location, 'edges a-list] -> ['(Generated sentence description for each path from the given location.')]
+; Given location, output multiple path description for the locn.
 
 (defun describe-paths (location edges)
                       (apply #'append (mapcar #'describe-path (cdr (assoc location edges)))))
 
-;; Objects
-; Variables: Objects and object locations
+;; ['(location direction mode-of-movt)] -> ['(Generated Sentence)]
+;; Convert path data to textual description
 
-(defparameter *objects* 
-              '(whiskey bucket mop toy))
-(defparameter *object-locations* 
-                                 '((living-room (whiskey)) 
-                                  (garden (mop) (bucket)) 
-								  (attic (toy))))
+(defun describe-path (edge)
+      `(There is a ,(cadr edge) going ,(caddr edge) from here.))
+
 								  
-; Function: describe visible objects
 
-(defun describe-object (objects) 
-                       `(There is a ,(car objects) on the floor.))
-(defun objects-at (location object-locations)
-                  (mapcar #'car (cdr (assoc location object-locations))))
+;; ['location, 'object-locations a-list] -> ['(Generated sentence description for each object in the given location.')]
+;; Given location and an a-list of object-locations, return multiple path descript
 				  
 (defun describe-objects (location object-locations)
                         (apply #'append (mapcar #'describe-object (cdr (assoc location object-locations)))))
-						
+
+;; ['(object)] -> ['(Generated Sentence)]
+;; Convert path data to textual description
+
+(defun describe-object (objects) 
+                       `(There is a ,(car objects) on the floor.))						
+
+;; ['location, 'object-locations a-list] -> []
+(defun objects-at (location object-locations)
+                  (mapcar #'car (cdr (assoc location object-locations))))
+
+
+
 
 
 ;;; Actions
@@ -140,9 +137,6 @@
 
 						
 ; Spaces: as is; Capitalize new line letters;  Lower case rest; Replace
-						
-; Spaces: as is; Capitalize new line letters;  Lower case rest; Replace	  
-	  
-
-(game-repl)	  
+  
          
+; (game-repl)
