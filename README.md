@@ -13,6 +13,6 @@ Many modifications were made based on my learning and changing preferences over 
 * Structure and Interpration of Computer Programs (book) by Gerald Sussman and Hal Abelson
 
 ### Code
-
+1. Restructured with increased modularity with future refactoring of each module in mind. For e.g., separating the scene rendering code permits one to render via web, native 3D graphics etc. without changing the other sections.
 ### Game Mechanics
 

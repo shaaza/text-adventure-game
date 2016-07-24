@@ -1,10 +1,22 @@
+(load "game-data.lisp")
+(load "screen-descriptors.lisp")
+(load "game-state.lisp")
+(load "game-uis.lisp")
+
+
+;;; Game loop/pipeline: 
+; 1. REPL hosts game 
+; 2. game-read reads, parses and converts user input into understandable commands for game-eval
+; 3. game-eval checks if command if permitted, executes it and passes the result onto gameprint
+; 4. game-print formats text and displays it on screen, uses tweak-text for formatting
+
 ;; game-repl
 ; Check if command is acceptable, convert to lisp code, and print user friendly text.
 (defun game-repl ()
                 (let ((cmd (game-read)))  
-                    (unless (eq (car cmd) 'quit) 
-					    (game-print (game-eval cmd))
-                        (game-repl))))				
+                     (unless (eq (car cmd) 'quit) 
+					                   (game-print (game-eval cmd))
+                             (game-repl))))				
 ;; game-read
 ; Features: i) Convert commands to lisp code: parentheses, unstring, quote
 
@@ -18,8 +30,7 @@
 												 
 					 
 ;; game-eval
-; Features: check acceptability of code     
-(defparameter *allowed-commands* '(walk look pickup quit inventory))
+; Features: check acceptability of code    
 
 (defun game-eval (command)
                   (cond 
@@ -27,6 +38,7 @@
 						         (eval command))
                         (t '(i do not know that command.))))								 
 ;; game-print Format text
+; Spaces: as is; Capitalize new line letters;  Lower case rest; Replace
 (defun tweak-text (lst caps lit)
        (when lst
        (let ((item (car lst))
@@ -49,4 +61,7 @@
 		(fresh-line))
 
 						
-; Spaces: as is; Capitalize new line letters;  Lower case rest; Replace
+  
+         
+
+; Call (game-repl) here
