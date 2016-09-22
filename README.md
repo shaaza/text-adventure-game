@@ -1,5 +1,5 @@
 ## Introduction
-The text adventure game from "Land of Lisp" by Conrad Barski, with a few personal modifications over time. To see the how the game is different from the one in the book, please read the Modifications section.
+The text adventure game based on a similar game from "Land of Lisp" by Conrad Barski, with a few personal modifications over time. To see the how the game is different from the one in the book, please read the Modifications section.
 
 ### How to Run the Game
 1. If you haven't already, install CLISP.
