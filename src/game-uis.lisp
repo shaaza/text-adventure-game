@@ -15,19 +15,24 @@
 ; @desc Change the location state depending on where the user wants to go, i.e. 'Walk around the world'
 ; @note It's not functional. But it's worth thinking how it could be made functional.
 
-(defun walk (direction)
+(defun walk (&optional direction)
+            (if direction
             (let ((next (find direction (cdr (assoc *location* *edges*)) :key #'cadr)))
-    			    (if next
-      			    (progn (setf *location* (car next)) (look))
-      				 '(You cannot go that way))))
+      			    (if next
+        			    (progn (setf *location* (car next)) (look))
+        				 '(You cannot go that way)))
+            '(Please specify which direction you want to go)))
+
 
 ; @func pickup
 ; @desc Append objects to the inventory (consider a 'body' location in object-locations) i.e. 'Pickup objects'
 ; @note Not functional, mutates state.
 
-(defun pickup (object)
-            (cond ((member object (objects-at *location* *object-locations*)) (push `(body ,(list object)) *object-locations*) '(You are now carrying the object.))
-			            (t '(You cannot pickup that object.))))
+(defun pickup (&optional object)
+            (if object
+              (cond ((member object (objects-at *location* *object-locations*)) (push `(body ,(list object)) *object-locations*) '(You are now carrying the object.))
+  			            (t '(You cannot pickup that object.)))
+              '(Please specify the name of the object you want to pickup)))
 
 ; @stub
 ; @func drop

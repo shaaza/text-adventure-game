@@ -1,6 +1,5 @@
 ;;;; Scene describers. (All purely functional)
 
-
 ;;; Operations on Nodes
 
 ; @func describe-location
@@ -31,12 +30,12 @@
 ;; Given location and an a-list of object-locations, return multiple path descript
 
 (defun describe-objects (location object-locations)
-                        (apply #'append (mapcar #'describe-object (cdr (assoc location object-locations)))))
+                        (apply #'append (mapcar #'describe-one-object (cdr (assoc location object-locations)))))
 
 ;; ['(object)] -> ['(Generated Sentence)]
 ;; Convert path data to textual description
 
-(defun describe-object (objects)
+(defun describe-one-object (objects)
                        `(There is a ,(car objects) on the floor.))
 
 ;; ['location, 'object-locations a-list] -> []
