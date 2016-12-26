@@ -13,26 +13,24 @@
 ; @desc Store location and desc as alists.(nodes)
 
 (defparameter *nodes*
-                      '((garden (There is a beautiful garden))
-                       (living-room (There is an old man sleeping on the couch))
-                       (attic (There is a lot of dust and mangoes))))
+                      '((garden (you are in the living-room. a wizard is snoring loudly on the couch.))
+                       (living-room (you are in a beautiful garden. there is a well in front of you.))
+                       (attic (you are in the attic. there is a giant welding torch in the corner.))))
 
 
 ;; Edges (or Paths)
 ; @type Global variable
 ; @desc Store location and path (to-location direction path-portal) as alists.
 
-(defparameter *edges* '((garden (living-room west door))
-                        (living-room (attic north ladder)
-                                     (garden east door  ))
-                        (attic (living-room south ladder))))
+(defparameter *edges* '((living-room (garden west door) (attic upstairs ladder))
+                        (garden (living-room east door))
+                        (attic (living-room downstairs ladder))))
 
 ;; Objects
 ; @type Global Variable
 ; @desc Objects and object locations
 
-(defparameter *objects*
-              '(whiskey bucket mop toy))
+(defparameter *objects* '(whiskey bucket frog chain))
 
 (defparameter *object-locations*
                                  '((living-room (whiskey))
