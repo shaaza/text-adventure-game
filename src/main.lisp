@@ -1,9 +1,3 @@
-(load "game-data.lisp")
-(load "scene-descriptors.lisp")
-(load "game-state.lisp")
-(load "game-uis.lisp")
-
-
 ;;; Game loop/pipeline:
 ; 1. REPL hosts game
 ; 2. game-read reads, parses and converts user input into understandable commands for game-eval
