@@ -1,5 +1,6 @@
 ## Introduction
-A text adventure game in CLISP involving a wizard looking for something, intended to be served over the web using the simple-web-server program.
+
+The text adventure game based on a similar game from "Land of Lisp" by Conrad Barski, with a few personal modifications over time. To see the how the game is different from the one in the book, please read the Modifications section.
 
 ### How to Run the Game
 1. If you haven't already, install CLISP.
@@ -14,3 +15,7 @@ Many modifications were made based on my learning and changing preferences over 
 
 ### Code
 1. Restructured with increased modularity with future refactoring of each module in mind. For e.g., separating the scene rendering code permits one to render via web, native 3D graphics etc. without changing the other sections.
+=======
+
+### Game Mechanics
+Added new actions in the form of
