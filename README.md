@@ -18,14 +18,5 @@ The following commands are valid:
 ```
 
 
-## Modifications
-Many modifications were made based on my learning and changing preferences over time. Three definite sources that primarily influenced these changes were:
-* The Systematic Program Design (MOOC on edX) by Prof. Gregor Kiczales at UBC
-* The Introduction to Game Design (MOOC on edX) by Prof. Philip Tan and Prof. Sarah Verilli at MIT
-* Structure and Interpretation of Computer Programs (book) by Gerald Sussman and Hal Abelson
-
-#### Code Changes
-Restructured with increased modularity with future refactoring of each module in mind. For e.g., separating the scene rendering code permits one to render via web, native 3D graphics etc. without changing the other sections.
-
-#### Game Mechanics
-Added new UI actions, and a few changes are yet to come.
+## Article
+[Architecting a Text Adventure Game](https://medium.com/@shaaz_a/architecting-a-text-adventure-game-2e0dc4d49812#.shi6wh4m1): My blog post on Medium that explains the architecture of this simple game.
