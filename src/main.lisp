@@ -71,7 +71,7 @@
 ; Print game instructions
 (print "The game has started. Type a command to start playing. Following are the allowed commands:")
 (print "look - examine your environment")
-(print "walk direction - where direction is east, west, north or south")
+(print "walk direction - where direction is east, west, upstairs, downstairs")
 (print "pickup object - pickup an object, where object is the name of any object")
 (print "inventory - view the objects you are carrying")
 
