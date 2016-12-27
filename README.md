@@ -24,8 +24,8 @@ Many modifications were made based on my learning and changing preferences over 
 * The Introduction to Game Design (MOOC on edX) by Prof. Philip Tan and Prof. Sarah Verilli at MIT
 * Structure and Interpretation of Computer Programs (book) by Gerald Sussman and Hal Abelson
 
-### Code
-1. Restructured with increased modularity with future refactoring of each module in mind. For e.g., separating the scene rendering code permits one to render via web, native 3D graphics etc. without changing the other sections.
+#### Code Changes
+Restructured with increased modularity with future refactoring of each module in mind. For e.g., separating the scene rendering code permits one to render via web, native 3D graphics etc. without changing the other sections.
 
-### Game Mechanics
-Added new actions in the form of
+#### Game Mechanics
+Added new UI actions, and a few changes are yet to come.
