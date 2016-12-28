@@ -1,6 +1,6 @@
 ## Introduction
 
-A command-line text adventure game where you win when you wake the wizard up. This can be served over the web using [simple-web-server](https://github.com/shaaza/simple-web-server).
+A command-line text adventure game where you win when you wake the wizard up. This can be served over the web using [simple-web-server](https://github.com/shaaza/simple-web-server) (in progress) and the  [xml-generator](https://github.com/shaaza/xml-generator) macro.
 
 ## How to Run the Game
 1. If you haven't already, install CLISP.
